@@ -1,20 +1,20 @@
 # Ether Wallet Smart Contract
 
-## 📌 Description
+## Description
 A simple Ethereum wallet smart contract that allows users to deposit ETH and allows the owner to withdraw funds securely.
 
-## 🔧 Features
+## Features
 - ETH deposits
 - Owner-only withdrawals
 - Pause/unpause functionality
 - receive() and fallback()
 - Events for deposits and withdrawals
 
-## 🛠 Tech Stack
+## Tech Stack
 - Solidity ^0.8.28
 - Remix IDE
 
-## 🚀 How to Test
+## How to Test
 1. Deploy contract in Remix
 2. Send ETH using deposit()
 3. Check contract balance
