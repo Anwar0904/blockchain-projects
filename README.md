@@ -42,8 +42,24 @@ A decentralized crowdfunding smart contract that allows users to create fundrais
 - Solidity (^0.8.x)
 - Ethereum Virtual Machine (EVM)
 - Remix IDE (for development and testing)
-
 ---
+
+### 03. Escrow Smart Contract
+A trustless escrow smart contract that securely holds ETH between a buyer and a seller until the transaction is completed or refunded.
+
+**Features**
+- Buyer creates an escrow with a specified seller and amount
+- Buyer funds the escrow with ETH
+- Funds are locked inside the smart contract
+- Buyer can release funds to the seller
+- Buyer can request a refund if the deal fails
+- Escrow lifecycle managed using enums
+- Secure ETH transfers using low-level call
+- Events emitted for all critical actions
+
+**Folder**
+- `03-escrow-contract`
+
 
 ## Author
 **Muhammad Anwar Ul Haq**
