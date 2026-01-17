@@ -39,7 +39,7 @@ A decentralized crowdfunding smart contract that allows users to create fundrais
 ---
 
 ## Tech Stack
-- Solidity (^0.8.x)
+- Solidity (^0.8.28)
 - Ethereum Virtual Machine (EVM)
 - Remix IDE (for development and testing)
 ---
