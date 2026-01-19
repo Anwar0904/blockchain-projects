@@ -77,6 +77,21 @@ A decentralized autonomous organization (DAO) smart contract that allows members
 **Folder**
 - `04-dao-voting`
 
+---
+
+### 05. Secure Wallet
+A security-focused Ethereum wallet smart contract with pausability and controlled withdrawals.
+
+**Features**
+- Owner-only withdrawals
+- Pause and resume contract activity
+- Secure ETH transfer using low-level call
+- Designed with reentrancy awareness
+- Event-driven transparency
+
+**Folder**
+- `04-secure-wallet`
+
 
 ## Author
 **Muhammad Anwar Ul Haq**
