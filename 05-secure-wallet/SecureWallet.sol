@@ -2,6 +2,15 @@
 pragma solidity ^0.8.28;
 
 contract SecureWallet {
+
+
+    error NotOwner();
+    error ContractPaused();
+    error AmountTooSmall();
+    error InsufficientBalance();
+    error TransferFailed();
+
+
     address public owner;
     bool public paused;
     
@@ -12,11 +21,11 @@ contract SecureWallet {
 
 //modifiers
     modifier onlyOwner(){
-        require(msg.sender == owner,"Not owner");
+        if(msg.sender != owner) revert NotOwner();
         _;
     }
     modifier whenNotPaused(){
-        require(!paused,"Contract is paused");
+        if(paused) revert ContractPaused();
         _;
     }
 
@@ -36,17 +45,17 @@ contract SecureWallet {
 
    //functions
    function Deposit() external payable whenNotPaused{
-        require(msg.value >0, "Nothing to deposit");
+        if(msg.value <=0) revert AmountTooSmall();
         
         emit Deposited(msg.sender, msg.value);
    }
 
    function Withdraw(uint256 _amount) external onlyOwner whenNotPaused{
-    require(_amount >0,"Withrawal amount must be > 0");
-    require(_amount <= address(this).balance,"Insufficient balance");
+   if(_amount ==0) revert AmountTooSmall();
+   if(_amount > address(this).balance) revert InsufficientBalance();
 
     (bool sent,)=owner.call{value:_amount}("");
-    (sent,"Fialed to withdraw");
+    if(!sent) revert TransferFailed();
    emit Withdrawal(owner, _amount);
    }
 
