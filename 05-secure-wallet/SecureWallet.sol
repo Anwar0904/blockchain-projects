@@ -3,16 +3,16 @@ pragma solidity ^0.8.28;
 
 contract SecureWallet {
 
+      address public owner;
+    bool public paused;
+    bool private locked;
 
     error NotOwner();
     error ContractPaused();
     error AmountTooSmall();
     error InsufficientBalance();
     error TransferFailed();
-
-
-    address public owner;
-    bool public paused;
+    error ReentrancyDetected();
     
     //events
     event Deposited(address indexed sender, uint256 amount);
@@ -27,6 +27,13 @@ contract SecureWallet {
     modifier whenNotPaused(){
         if(paused) revert ContractPaused();
         _;
+    }
+
+    modifier noReentrant(){
+        if(locked) revert ReentrancyDetected();
+        locked=true;
+        _;
+        locked=false;
     }
 
     // constructor
@@ -50,7 +57,7 @@ contract SecureWallet {
         emit Deposited(msg.sender, msg.value);
    }
 
-   function Withdraw(uint256 _amount) external onlyOwner whenNotPaused{
+   function Withdraw(uint256 _amount) external onlyOwner whenNotPaused noReentrant{
    if(_amount ==0) revert AmountTooSmall();
    if(_amount > address(this).balance) revert InsufficientBalance();
 
