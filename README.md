@@ -123,8 +123,31 @@ A decentralized staking platform where users can stake ETH and earn APR-based re
 **Folder**
 - `06-Staking-contract`
 
+
 ---
 
+### 07. Multi-Signature Wallet
+A decentralized wallet requiring multiple approvals for transactions, similar to Gnosis Safe.
+
+**Features**
+- **M-of-N Approval System** - Configurable threshold (e.g., 2-of-3, 3-of-5)
+- **Transaction Queue** - Propose, approve, and execute transactions
+- **Smart Contract Support** - Execute arbitrary contract calls
+- **Revocable Approvals** - Owners can change votes before execution
+- **Full Transparency** - All actions logged with events
+- **Secure Execution** - Reentrancy-safe transaction processing
+
+**Technical Highlights**
+- Complex transaction lifecycle management
+- Nested mappings for approval tracking
+- Bytes data parameter for arbitrary calls
+- Custom error handling for gas efficiency
+- Comprehensive event logging
+
+**Folder**
+- `07-Multi-Signature-Wallet`
+
+---
 
 ## Author
 **Muhammad Anwar Ul Haq**
