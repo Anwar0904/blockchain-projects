@@ -149,6 +149,35 @@ A decentralized wallet requiring multiple approvals for transactions, similar to
 
 ---
 
+### 08. NFT Marketplace
+A decentralized marketplace for buying and selling NFTs with fixed-price listings.
+
+**Features**
+- **Fixed-Price Listings** - Set specific prices for NFTs
+- **Multi-Collection Support** - Works with any ERC721 NFT contract
+- **Configurable Fees** - Adjustable platform commission (default 2.5%)
+- **Secure Transactions** - Built-in reentrancy protection
+- **Approval System** - Standard ERC721 approval patterns
+- **Fee Tracking** - Platform fees tracked and withdrawable separately
+- **Event Logging** - Comprehensive transaction history
+
+**Technical Highlights**
+- Full ERC721 interface integration
+- Basis points calculation for precise fees
+- Checks-Effects-Interactions security pattern
+- Nested mapping for efficient listing storage
+- Custom error handling for gas efficiency
+
+**Phase 2 Concepts Covered**
+- Interface implementation and usage
+- Complex mathematical calculations
+- Approval system management
+- Secure payment escrow patterns
+- Advanced event logging with indexed parameters
+
+**Folder**
+- `08-NFT-Marketplace`
+
 ## Author
 **Muhammad Anwar Ul Haq**
 
