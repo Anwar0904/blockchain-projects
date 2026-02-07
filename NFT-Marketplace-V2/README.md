@@ -205,11 +205,11 @@ withdrawFees();
 
 | Feature         | Phase 2 | Phase 3 |
 | --------------- | ------- | ------- |
-| Bool flags      | ❌       | ✅       |
-| Custom errors   | ❌       | ✅       |
-| Struct packing  | ❌       | ✅       |
-| Immutable owner | ❌       | ✅       |
-| Gas optimized   | ❌       | ✅       |
+| Bool flags      | No       | Yes       |
+| Custom errors   | No       | Yes       |
+| Struct packing  | No       | Yes       |
+| Immutable owner | No       | Yes       |
+| Gas optimized   | No       | Yes       |
 
 ---
 
