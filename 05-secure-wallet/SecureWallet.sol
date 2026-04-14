@@ -1,9 +1,7 @@
 // SPDX-License-Identifier: MIT
 pragma solidity ^0.8.28;
 
-/// @title SecureWallet - A time-locked wallet with emergency withdrawals
-/// @notice Users can deposit ETH, withdraw after timelock, or emergency withdraw with penalty
-/// @dev Implements reentrancy protection, custom errors, and owner controls
+
 contract SecureWallet {
     address public owner;
     bool public paused;
